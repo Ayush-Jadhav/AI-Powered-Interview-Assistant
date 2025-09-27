@@ -4,10 +4,6 @@ An intelligent, full-stack application designed to automate the initial screenin
 
 The application features a timed, AI-driven chat interview for candidates and a comprehensive dashboard for interviewers to review results, scores, and AI-generated summaries.
 
-**(--- Add a Screenshot Here! ---)**
-> It's highly recommended to add a screenshot or a GIF of your application in action. You can use a tool like ScreenToGif or just take a screenshot and place it here.
-> `![App Screenshot](./path-to-your-screenshot.png)`
-
 ---
 
 ## Features
