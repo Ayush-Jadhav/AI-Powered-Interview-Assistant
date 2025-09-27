@@ -102,7 +102,7 @@ const InterviewChat = () => {
           <div style={{ margin: '1rem 0' }}>
             <Progress type="circle" percent={isTimerActive ? Math.round((timeLeft / getTimerDuration()) * 100) : 100} format={() => `${timeLeft}s`} />
           </div>
-          <TextArea rows={6} value={answer} onChange={(e) => setAnswer(e.targe.value)} placeholder="Type your answer here..." />
+          <TextArea rows={6} value={answer} onChange={(e) => setAnswer(e.target.value)} placeholder="Type your answer here..." />
           <Button type="primary" onClick={handleSubmit} style={{ marginTop: '1rem' }}>Submit Answer</Button>
         </>
       )}
