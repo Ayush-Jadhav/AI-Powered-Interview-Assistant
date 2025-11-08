@@ -2,41 +2,41 @@
 
 // By using relative paths, the browser will automatically send the request
 // to the same server that it loaded the website from.
-// This works for local development (with the proxy) and for your
+// This works for local development (with the proxy) and for my
 // single-service deployment on Render.
 
-// Generates a question by calling our backend endpoint
+// Generates question by calling our backend endpoint
 export const generateQuestion = async (difficulty, existingQuestions = []) => {
   const response = await fetch(`/api/generateQuestion`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ difficulty, existingQuestions }),
   });
-  if (!response.ok) throw new Error('Network response was not ok',response);
+  if (!response.ok) throw new Error("Network response was not ok", response);
   const data = await response.json();
   return data.question;
 };
 
-// Evaluates an answer by calling our backend endpoint
+// Evaluates answer by calling backend endpoint
 export const evaluateAnswer = async (question, answer) => {
   const response = await fetch(`/api/evaluateAnswer`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question, answer }),
   });
-  if (!response.ok) throw new Error('Network response was not ok',response);
+  if (!response.ok) throw new Error("Network response was not ok", response);
   const data = await response.json();
   return data;
 };
 
-// Generates a summary by calling our backend endpoint
+// Generates summary by calling backend endpoint
 export const generateFinalSummary = async (candidateData) => {
-    const response = await fetch(`/api/generateSummary`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ candidateData }),
-    });
-    if (!response.ok) throw new Error('Network response was not ok',response);
-    const data = await response.json();
-    return data.summary;
+  const response = await fetch(`/api/generateSummary`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ candidateData }),
+  });
+  if (!response.ok) throw new Error("Network response was not ok", response);
+  const data = await response.json();
+  return data.summary;
 };
